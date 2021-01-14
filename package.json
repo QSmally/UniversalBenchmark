@@ -1,0 +1,22 @@
+{
+  "name": "UniversalBenchmark",
+  "private": true,
+  "description": "Compares the speed of QDB with other libraries",
+  "main": "Main.js",
+  "keywords": [
+    "QDB",
+    "Optimisations"
+  ],
+  "scripts": {
+    "build": "npm i",
+    "benchmark": "node Main.js"
+  },
+  "author": "QSmally",
+  "license": "MIT",
+  "dependencies": {
+    "@josh-providers/sqlite": "^1.1.1",
+    "enmap": "^5.8.2",
+    "josh": "^1.1.0",
+    "qdatabase": "github:QSmally/QDB"
+  }
+}
