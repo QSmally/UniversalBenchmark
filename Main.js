@@ -67,7 +67,7 @@ async function Populate (Test, Path, TableCreate, DoTheStuff, GetSize, Close) {
 const DatabaseTimingSpecs = new Map();
 
 async function FetchBenchmark (Test, TableFetch, DoTheStuff, Close) {
-    process.stdout.write(CLI.blue(`\n${Test}\n`));
+    process.stdout.write(CLI.blue(`\n\n${Test}\n`));
     DatabaseTimingSpecs.set(Test, {});
 
     for (const [Table, Size] of Tables) {
@@ -91,13 +91,13 @@ async function FetchBenchmark (Test, TableFetch, DoTheStuff, Close) {
     for (const Table in Current)
     process.stdout.write(CLI.white(
         `\n· ${CLI.bold(Table.padEnd(15))}` +
-        CLI.green.bold(`${Current[Table].Time.toFixed(3)}s\n`)
+        CLI.green.bold(`${Current[Table].Time.toFixed(3)}s`)
     ));
 }
 
 
 (async () => {
-    process.stdout.write(CLI.white("Creating the necessary tables...\n"));
+    process.stdout.write(CLI.white("Creating the necessary tables..."));
 
     await Populate("QDB", "data/qdb.qdb", Table => {
         return new QDB.Connection("data/qdb.qdb", {
