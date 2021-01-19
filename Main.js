@@ -111,6 +111,7 @@ async function FetchBenchmark (Test, TableFetch, DoTheStuff, Close) {
 
     await Populate("Enmap", "data/enmap.sqlite", async Table => {
         const MyEnmap = new Enm(Table);
+
         await MyEnmap.defer;
         return MyEnmap;
     },
@@ -124,6 +125,7 @@ async function FetchBenchmark (Test, TableFetch, DoTheStuff, Close) {
             name: Table,
             provider: require("@josh-providers/sqlite")
         });
+
         await MyJosh.defer;
         return MyJosh;
     },
