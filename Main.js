@@ -1,7 +1,7 @@
 
 const QDB = require("qdatabase");
 const Enm = require("enmap");
-const Jsh = require("josh");
+const Jsh = require("@joshdb/core");
 
 const Crypto = require("crypto");
 const CLI    = require("cli-color");
@@ -123,7 +123,7 @@ async function FetchBenchmark (Test, TableFetch, DoTheStuff, Close) {
     await Populate("Josh", "data/josh.sqlite", async Table => {
         const MyJosh = new Jsh({
             name: Table,
-            provider: require("@josh-providers/sqlite")
+            provider: require("@joshdb/sqlite")
         });
 
         await MyJosh.defer;
@@ -169,7 +169,7 @@ async function FetchBenchmark (Test, TableFetch, DoTheStuff, Close) {
     await FetchBenchmark("Josh", async Table => {
         const MyJosh = new Jsh({
             name: Table,
-            provider: require("@josh-providers/sqlite")
+            provider: require("@joshdb/sqlite")
         });
 
         await MyJosh.defer;
