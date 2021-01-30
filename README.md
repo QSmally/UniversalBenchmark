@@ -9,6 +9,7 @@ I'm not going to be putting any big work into this repository. As this is basica
 
 ```
 git clone git@github.com:QSmally/UniversalBenchmark.git
-npm run build
-node .
+cd UniversalBenchmark
+npm i
+npm run benchmark
 ```
